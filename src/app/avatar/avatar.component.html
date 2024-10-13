@@ -1,0 +1,11 @@
+@if (src()) {
+  <img class="image" loading="lazy" [src]="src()" [alt]="alt() || ''">
+}
+
+@if (presenceIndicator()) {
+  <div class="presence-indicator"
+       [class.is-online]="presenceIndicator() === 'online'"
+       [class.is-offline]="presenceIndicator() === 'offline'"></div>
+}
+
+<div class="w-full h-full absolute z-0 inset-0 placeholder" [innerHTML]="placeholder"></div>
